@@ -5,3 +5,5 @@
 -->2 files are there one for training and other for resizing images.
 -->After training out put will be like "image number"==>"signed/unsigned"
 -->eg. 15==>signed
+-->order of images will be shuffled because I have shuffled testdata in testing.
+-->for preparing test data set I have taken 21 images from each signed and unsigned dataset.
