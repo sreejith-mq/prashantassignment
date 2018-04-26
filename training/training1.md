@@ -53,8 +53,7 @@ def process_test_data():
 
 train_data = create_train_data()
 test_data=process_test_data()
-#now we are defining neural network to fit
-#f=np.reshape(train,[None,67,829,1])   #67*829 is a dimension of every image 
+
 
 #defining CNN
 tf.reset_default_graph()
