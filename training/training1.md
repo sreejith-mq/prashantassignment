@@ -85,7 +85,8 @@ model = tflearn.DNN(convnet, tensorboard_dir='log')
 if os.path.exists('/home/student/Desktop/mquotient/mquo model{}.meta{}.meta'.format(MODEL_NAME)):
     model.load(MODEL_NAME)
     print('model loaded!')
-    
+ 
+ #preparing trainig aand validation sets
     
 train = train_data[:81] # 61x2, i[0]=67x829
 test = train_data[:-30] # 51x2
@@ -94,7 +95,7 @@ test = train_data[:-30] # 51x2
 
 
 
-
+#loading training and validations sets
 X = np.asarray([i[0] for i in train]) # 61x67x829
 X=np.reshape(X,(81,67,829,1))
 Y = np.asarray([i[1] for i in train]) # 61x2
@@ -104,5 +105,6 @@ test_x = np.asarray([i[0] for i in test])
 test_x=np.reshape(test_x,(51,67,829,1))  # preparing validation images
 test_y = np.asarray([i[1] for i in test]) # preparing validation labels
 
+#training model
 model.fit({'input': X}, {'targets': Y}, n_epoch=20, validation_set=({'input': test_x}, {'targets': test_y}),snapshot_step=500, show_metric=True,batch_size=3, run_id=MODEL_NAME)
 
