@@ -113,7 +113,7 @@ for num,data in enumerate(test_data[:42]):
     img_data = data[0]
 
     orig = img_data
-    data = img_data.reshape(67,829) # 67x829
+    data = img_data.reshape(67,829) 
     data = np.reshape(data,(67,829,1))
     model_out = model.predict([data])
 
