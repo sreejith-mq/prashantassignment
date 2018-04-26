@@ -11,7 +11,7 @@ from tflearn.layers.estimator import regression
 import matplotlib.pyplot as plt
 TRAIN_DIR = '/home/student/Desktop/algonlty/trainmquokaggle'
 TEST_DIR = '/home/student/Desktop/algonlty/testmquo'
-#IMG_SIZE = 829
+
 LR = 1e-3
 
 MODEL_NAME = 'signxunsign-{}-{}.model'.format(LR, '2conv-basic') 
