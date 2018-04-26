@@ -9,7 +9,7 @@ from tflearn.layers.conv import conv_2d, max_pool_2d
 from tflearn.layers.core import input_data, dropout, fully_connected
 from tflearn.layers.estimator import regression
 import matplotlib.pyplot as plt
-TRAIN_DIR = '/home/student/Desktop/algonlty/trainmquokaggle'
+TRAIN_DIR = '/home/student/Desktop/algonlty/trainmquo'
 TEST_DIR = '/home/student/Desktop/algonlty/testmquo'
 
 LR = 1e-3
