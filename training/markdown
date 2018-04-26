@@ -1,0 +1,13 @@
+DETAILS OF LIBRARIES
+
+
+import cv2                 # working with, mainly trasforming and resizing (scalar operation) on images
+import numpy as np         # dealing with arrays
+import os                  # dealing with directories
+from random import shuffle # mixing up or currently ordered data for generating momre randomness in training 
+from tqdm import tqdm      # a nice pretty percentage bar for tasks
+import tflearn   # upper layer of tensorflow
+import tensorflow as tf
+from tflearn.layers.conv import conv_2d, max_pool_2d  # components for convolution
+from tflearn.layers.core import input_data, dropout, fully_connected
+from tflearn.layers.estimator import regression
