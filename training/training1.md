@@ -31,7 +31,7 @@ def create_train_data():
         label = label_img(img)
         path = os.path.join(TRAIN_DIR,img)
         img = cv2.imread(path,cv2.IMREAD_GRAYSCALE)
-        #img = cv2.resize(img, (829,67))                  #resize in the pixels of 829 x 67
+           
         training_data.append([np.array(img),np.array(label)])
     shuffle(training_data)
     np.save('train_data.npy', training_data)
@@ -44,7 +44,7 @@ def process_test_data():
         path = os.path.join(TEST_DIR, img)
         img_num = img.split('.')[0]
         img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
-        #img = cv2.resize(img, (829, 67))
+        
         testing_data.append([np.array(img), img_num])
 
     shuffle(testing_data)
@@ -91,24 +91,19 @@ if os.path.exists('/home/student/Desktop/mquotient/mquo model{}.meta{}.meta'.for
 train = train_data[:81] # 61x2, i[0]=67x829
 test = train_data[:-30] # 51x2
 
-# for ele in train:
-#     print("element 0")
-#     print(ele[0][45])
-#     print("elemewnt 1")
-#     print(ele[1])
 
 
-#print(len(train[0]))
-#print(train[1])
+
+
 
 X = np.asarray([i[0] for i in train]) # 61x67x829
 X=np.reshape(X,(81,67,829,1))
 Y = np.asarray([i[1] for i in train]) # 61x2
 
 test_x = np.asarray([i[0] for i in test])
-print test_x.shape
-test_x=np.reshape(test_x,(51,67,829,1))
-test_y = np.asarray([i[1] for i in test])
+
+test_x=np.reshape(test_x,(51,67,829,1))  # preparing validation images
+test_y = np.asarray([i[1] for i in test]) # preparing validation labels
 
 model.fit({'input': X}, {'targets': Y}, n_epoch=20, validation_set=({'input': test_x}, {'targets': test_y}),snapshot_step=500, show_metric=True,batch_size=3, run_id=MODEL_NAME)
 
