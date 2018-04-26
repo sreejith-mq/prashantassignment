@@ -1,0 +1,109 @@
+This is a sample testing: with 4 epochs and batch size 3
+
+---------------------------------
+Run id: signxunsign-0.001-2conv-basic.model
+Log directory: log/
+---------------------------------
+Training samples: 81
+Validation samples: 51
+
+--
+Training Step: 109  | total loss: 0.65034 | time: 0.350s
+| Adam | epoch: 005 | loss: 0.65034 - acc: 0.7611 -- iter: 03/81
+Training Step: 110  | total loss: 0.71932 | time: 0.710s
+| Adam | epoch: 005 | loss: 0.71932 - acc: 0.7517 -- iter: 06/81
+Training Step: 111  | total loss: 0.64740 | time: 1.056s
+| Adam | epoch: 005 | loss: 0.64740 - acc: 0.7765 -- iter: 09/81
+Training Step: 112  | total loss: 0.58674 | time: 1.402s
+| Adam | epoch: 005 | loss: 0.58674 - acc: 0.7989 -- iter: 12/81
+Training Step: 113  | total loss: 0.53329 | time: 1.754s
+| Adam | epoch: 005 | loss: 0.53329 - acc: 0.8190 -- iter: 15/81
+Training Step: 114  | total loss: 0.48118 | time: 2.099s
+| Adam | epoch: 005 | loss: 0.48118 - acc: 0.8371 -- iter: 18/81
+Training Step: 115  | total loss: 0.43362 | time: 2.452s
+| Adam | epoch: 005 | loss: 0.43362 - acc: 0.8534 -- iter: 21/81
+Training Step: 116  | total loss: 0.39025 | time: 2.795s
+| Adam | epoch: 005 | loss: 0.39025 - acc: 0.8680 -- iter: 24/81
+Training Step: 117  | total loss: 0.49323 | time: 3.145s
+| Adam | epoch: 005 | loss: 0.49323 - acc: 0.8479 -- iter: 27/81
+Training Step: 118  | total loss: 0.44461 | time: 3.495s
+| Adam | epoch: 005 | loss: 0.44461 - acc: 0.8631 -- iter: 30/81
+Training Step: 119  | total loss: 0.40032 | time: 3.852s
+| Adam | epoch: 005 | loss: 0.40032 - acc: 0.8768 -- iter: 33/81
+Training Step: 120  | total loss: 0.36066 | time: 4.204s
+| Adam | epoch: 005 | loss: 0.36066 - acc: 0.8891 -- iter: 36/81
+Training Step: 121  | total loss: 0.32506 | time: 4.542s
+| Adam | epoch: 005 | loss: 0.32506 - acc: 0.9002 -- iter: 39/81
+Training Step: 122  | total loss: 0.29259 | time: 4.897s
+| Adam | epoch: 005 | loss: 0.29259 - acc: 0.9102 -- iter: 42/81
+Training Step: 123  | total loss: 0.26375 | time: 5.262s
+| Adam | epoch: 005 | loss: 0.26375 - acc: 0.9192 -- iter: 45/81
+Training Step: 124  | total loss: 0.23780 | time: 5.607s
+| Adam | epoch: 005 | loss: 0.23780 - acc: 0.9273 -- iter: 48/81
+Training Step: 125  | total loss: 0.21713 | time: 5.948s
+| Adam | epoch: 005 | loss: 0.21713 - acc: 0.9345 -- iter: 51/81
+Training Step: 126  | total loss: 0.19564 | time: 6.289s
+| Adam | epoch: 005 | loss: 0.19564 - acc: 0.9411 -- iter: 54/81
+Training Step: 127  | total loss: 0.17753 | time: 6.634s
+| Adam | epoch: 005 | loss: 0.17753 - acc: 0.9470 -- iter: 57/81
+Training Step: 128  | total loss: 0.15977 | time: 6.993s
+| Adam | epoch: 005 | loss: 0.15977 - acc: 0.9523 -- iter: 60/81
+Training Step: 129  | total loss: 0.14386 | time: 7.335s
+| Adam | epoch: 005 | loss: 0.14386 - acc: 0.9570 -- iter: 63/81
+Training Step: 130  | total loss: 0.12951 | time: 7.702s
+| Adam | epoch: 005 | loss: 0.12951 - acc: 0.9613 -- iter: 66/81
+Training Step: 131  | total loss: 0.11659 | time: 8.051s
+| Adam | epoch: 005 | loss: 0.11659 - acc: 0.9652 -- iter: 69/81
+Training Step: 132  | total loss: 0.36321 | time: 8.420s
+| Adam | epoch: 005 | loss: 0.36321 - acc: 0.9354 -- iter: 72/81
+Training Step: 133  | total loss: 0.33579 | time: 8.786s
+| Adam | epoch: 005 | loss: 0.33579 - acc: 0.9418 -- iter: 75/81
+Training Step: 134  | total loss: 0.30228 | time: 9.141s
+| Adam | epoch: 005 | loss: 0.30228 - acc: 0.9476 -- iter: 78/81
+Training Step: 135  | total loss: 0.27206 | time: 11.681s
+| Adam | epoch: 005 | loss: 0.27206 - acc: 0.9529 | val_loss: 0.51196 - val_acc: 0.9020 -- iter: 81/81
+--
+35==>UnSigned
+9==>Signed
+38==>UnSigned
+21==>Signed
+30==>UnSigned
+15==>Signed
+18==>Signed
+39==>UnSigned
+20==>Signed
+19==>Signed
+23==>UnSigned
+10==>Signed
+27==>UnSigned
+5==>UnSigned
+2==>Signed
+28==>UnSigned
+33==>UnSigned
+34==>UnSigned
+29==>UnSigned
+25==>UnSigned
+8==>Signed
+16==>Signed
+4==>Signed
+11==>UnSigned
+12==>Signed
+37==>UnSigned
+36==>UnSigned
+24==>UnSigned
+42==>UnSigned
+3==>Signed
+14==>UnSigned
+41==>UnSigned
+31==>UnSigned
+22==>UnSigned
+7==>UnSigned
+6==>Signed
+17==>Signed
+32==>UnSigned
+26==>UnSigned
+13==>Signed
+40==>UnSigned
+1==>Signed
+
+Process finished with exit code 0
