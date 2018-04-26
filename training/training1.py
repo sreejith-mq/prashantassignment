@@ -9,8 +9,8 @@ from tflearn.layers.conv import conv_2d, max_pool_2d
 from tflearn.layers.core import input_data, dropout, fully_connected
 from tflearn.layers.estimator import regression
 import matplotlib.pyplot as plt
-TRAIN_DIR = '/home/student/Desktop/algonlty/trainmquo'
-TEST_DIR = '/home/student/Desktop/algonlty/testmquo'
+TRAIN_DIR = '/home/student/Desktop/algonlty/trainmquo'   #training directory
+TEST_DIR = '/home/student/Desktop/algonlty/testmquo'      #testing directory  
 
 LR = 1e-3
 
@@ -32,8 +32,8 @@ def create_train_data():
         path = os.path.join(TRAIN_DIR,img)
         img = cv2.imread(path,cv2.IMREAD_GRAYSCALE)
            
-        training_data.append([np.array(img),np.array(label)])
-    shuffle(training_data)
+        training_data.append([np.array(img),np.array(label)]) # preparing training data as 2d list where 1st numpy array of image and 2nd is label in 0/1
+    shuffle(training_data) # shuffle training for leveraging more randomness
     np.save('train_data.npy', training_data)
     return training_data
 
