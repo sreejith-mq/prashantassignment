@@ -7,3 +7,4 @@
 -->eg. 15==>signed
 -->order of images will be shuffled because I have shuffled testdata in testing.
 -->for preparing test data set I have taken 21 images from each signed and unsigned dataset.
+-->Here I have done slight modification , rather than passing one image during prediction. I am making prediction on all 42 test          images as I have mentioned that 21 signed and 21 unsigned in testing. 
