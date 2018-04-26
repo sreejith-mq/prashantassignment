@@ -1,0 +1,89 @@
+import cv2                
+import numpy as np        
+import os                 
+from random import shuffle 
+from tqdm import tqdm      
+import tflearn
+import tensorflow as tf
+from tflearn.layers.conv import conv_2d, max_pool_2d
+from tflearn.layers.core import input_data, dropout, fully_connected
+from tflearn.layers.estimator import regression
+import matplotlib.pyplot as plt
+TRAIN_DIR = '/home/student/Desktop/algonlty/trainmquokaggle'
+TEST_DIR = '/home/student/Desktop/algonlty/testmquo'
+#IMG_SIZE = 829
+LR = 1e-3
+
+MODEL_NAME = 'signxunsign-{}-{}.model'.format(LR, '2conv-basic') 
+
+def label_img(img):
+    word_label = img.split('.')[0]
+    # conversion to one-hot array [sign,unsign]
+    #                            [1 for sign]
+    if word_label == 'sign': return [1,0]
+    #                             [0 for unsign]
+    elif word_label == 'usign': return [0,1]
+
+#preparing training data
+def create_train_data():
+    training_data = []
+    for img in tqdm(os.listdir(TRAIN_DIR)):
+        label = label_img(img)
+        path = os.path.join(TRAIN_DIR,img)
+        img = cv2.imread(path,cv2.IMREAD_GRAYSCALE)
+        #img = cv2.resize(img, (829,67))                  #resize in the pixels of 829 x 67
+        training_data.append([np.array(img),np.array(label)])
+    shuffle(training_data)
+    np.save('train_data.npy', training_data)
+    return training_data
+
+#preparing test data
+def process_test_data():
+    testing_data = []
+    for img in tqdm(os.listdir(TEST_DIR)):
+        path = os.path.join(TEST_DIR, img)
+        img_num = img.split('.')[0]
+        img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
+        #img = cv2.resize(img, (829, 67))
+        testing_data.append([np.array(img), img_num])
+
+    shuffle(testing_data)
+    np.save('test_data.npy', testing_data)
+    return testing_data
+
+train_data = create_train_data()
+test_data=process_test_data()
+#now we are defining neural network to fit
+#f=np.reshape(train,[None,67,829,1])   #67*829 is a dimension of every image 
+
+#defining CNN
+tf.reset_default_graph()
+convnet = input_data(shape=[None, 67, 829, 1], name='input')
+
+convnet = conv_2d(convnet, 32, 5, activation='relu')
+convnet = max_pool_2d(convnet, 5)
+
+convnet = conv_2d(convnet, 64, 5, activation='relu')
+convnet = max_pool_2d(convnet, 5)
+
+convnet = conv_2d(convnet, 128, 5, activation='relu')
+convnet = max_pool_2d(convnet, 5)
+
+convnet = conv_2d(convnet, 64, 5, activation='relu')
+convnet = max_pool_2d(convnet, 5)
+
+convnet = conv_2d(convnet, 32, 5, activation='relu')
+convnet = max_pool_2d(convnet, 5)
+
+convnet = fully_connected(convnet, 1024, activation='relu')
+convnet = dropout(convnet, 0.8)
+
+convnet = fully_connected(convnet, 2, activation='softmax')
+convnet = regression(convnet, optimizer='adam', learning_rate=LR, loss='categorical_crossentropy', name='targets')
+
+model = tflearn.DNN(convnet, tensorboard_dir='log')
+
+if os.path.exists('{}.meta'.format(MODEL_NAME)):
+    model.load(MODEL_NAME)
+    print('model loaded!')
+
