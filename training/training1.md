@@ -86,7 +86,7 @@ if os.path.exists('/home/student/Desktop/mquotient/mquo model{}.meta{}.meta'.for
     model.load(MODEL_NAME)
     print('model loaded!')
  
- #preparing trainig aand validation sets
+#preparing trainig aand validation sets
     
 train = train_data[:81] # 61x2, i[0]=67x829
 test = train_data[:-30] # 51x2
