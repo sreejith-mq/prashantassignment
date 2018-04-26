@@ -45,9 +45,9 @@ def process_test_data():
         img_num = img.split('.')[0]
         img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
         
-        testing_data.append([np.array(img), img_num])
+        testing_data.append([np.array(img), img_num]) # preparing training data as 2d list where 1st numpy array of image and 2nd is image number
 
-    shuffle(testing_data)
+    shuffle(testing_data) # shuffle testing for levaraging more randomness
     np.save('test_data.npy', testing_data)
     return testing_data
 
