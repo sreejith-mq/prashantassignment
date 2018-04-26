@@ -3,3 +3,5 @@
 -->To feed given signed and unsigned training images to CNN, Images should have same dimensions else we need to pad with default pixel values.
 -->Here I am trasforming each image to fixed size 829 x 67 which is a largest dimension in training.
 -->2 files are there one for training and other for resizing images.
+-->After training out put will be like "image number"==>"signed/unsigned"
+-->eg. 15==>signed
