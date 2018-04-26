@@ -2,7 +2,7 @@
 import cv2   
 from tqdm import tqdm 
 import os 
-TRAIN_DIR = '/home/student/Desktop/mquotient/trainmquokaggle'
+TRAIN_DIR = '/home/student/Desktop/mquotient/trainmquo'
 TEST_DIR = '/home/student/Desktop/mquotient/testmquo'
 
 	
