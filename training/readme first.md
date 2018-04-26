@@ -1,1 +1,5 @@
-
+-->Here given assignment problem is  classification problem to sort documents into two categorries - Signed and Unsigned.
+-->I am using CNN based supervised training approach.
+-->To feed given signed and unsigned training images to CNN, Images should have same dimensions else we need to pad with default pixel values.
+-->Here I am trasforming each image to fixed size 829 x 67 which is a largest dimension in training.
+-->2 files are there one for training and other for resizing images.
