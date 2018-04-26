@@ -22,7 +22,7 @@ def label_img(img):
     #                            [1 for sign]
     if word_label == 'sign': return [1,0]
     #                             [0 for unsign]
-    elif word_label == 'usign': return [0,1]
+    elif word_label == 'unsign': return [0,1]
 
 #preparing training data
 def create_train_data():
@@ -83,7 +83,7 @@ convnet = regression(convnet, optimizer='adam', learning_rate=LR, loss='categori
 
 model = tflearn.DNN(convnet, tensorboard_dir='log')
 
-if os.path.exists('{}.meta'.format(MODEL_NAME)):
+if os.path.exists('/home/student/Desktop/mquotient/mquo model{}.meta{}.meta'.format(MODEL_NAME)):
     model.load(MODEL_NAME)
     print('model loaded!')
 
